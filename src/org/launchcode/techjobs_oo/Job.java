@@ -114,15 +114,15 @@ public class Job {
 
     @Override
     public String toString() {
-        if (name.equals("")) {
+        if (name == "") {
             return "\n ID: " + id + "\n Name: Data not available" +"\n Employer: " + employer + "\n Location: " + location + "\n Position Type: " + positionType + "\n Core Competency: " + coreCompetency + "\n";
-        } else if (employer.getValue().equals("")){
+        } else if (employer.getValue() == ""){
             return "\n ID: " + id + "\n Name: " + name +"\n Employer: Data not available" + "\n Location: " + location + "\n Position Type: " + positionType + "\n Core Competency: " + coreCompetency + "\n";
-        } else if (location.getValue().equals("")){
+        } else if (location.getValue() == ""){
             return "\n ID: " + id + "\n Name: " + name +"\n Employer: " + employer + "\n Location: Data not available" + "\n Position Type: " + positionType + "\n Core Competency: " + coreCompetency + "\n";
-        } else if (positionType.getValue().equals("")){
+        } else if (positionType.getValue() == ""){
             return "\n ID: " + id + "\n Name: " + name +"\n Employer: " + employer + "\n Location: " + location + "\n Position Type: Data not available" + "\n Core Competency: " + coreCompetency + "\n";
-        } else if (coreCompetency.getValue().equals("")) {
+        } else if (coreCompetency.getValue() == "") {
             return "\n ID: " + id + "\n Name: " + name +"\n Employer: " + employer + "\n Location: " + location + "\n Position Type: " + positionType + "\n Core Competency: Data not available" + "\n";
         } else {
             return "\n ID: " + id + "\n Name: " + name +"\n Employer: " + employer + "\n Location: " + location + "\n Position Type: " + positionType + "\n Core Competency: " + coreCompetency + "\n";

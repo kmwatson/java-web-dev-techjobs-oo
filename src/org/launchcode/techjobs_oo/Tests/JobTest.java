@@ -20,8 +20,8 @@ public class JobTest {
     public void testSettingJobId() {
         firstTestJob = new Job();
         secondTestJob = new Job();
-        assertEquals(1, firstTestJob.getId());
-        assertEquals(2, secondTestJob.getId());
+        assertEquals(10, firstTestJob.getId());
+        assertEquals(11, secondTestJob.getId());
         assertNotEquals(firstTestJob.getId(), secondTestJob.getId());
     }
 
@@ -68,31 +68,31 @@ public class JobTest {
     @Test
     public void testToStringEmptyFieldName() {
         firstTestJob = new Job("", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
-        assertEquals("\n ID: \n Name: Data not available \n Employer: ACME \n Location: Desert \n Position Type: Quality Control \n Core Competency: Persistence \n", firstTestJob.toString());
+        assertEquals("\n ID: 5\n Name: Data not available\n Employer: ACME\n Location: Desert\n Position Type: Quality Control\n Core Competency: Persistence\n", firstTestJob.toString());
     }
 
     @Test
     public void testToStringEmptyFieldEmployer() {
         firstTestJob = new Job("Product Tester", new Employer(""), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
-        assertEquals("\n ID: \n Name: Product Tester \n Employer: Data not available \n Location: Desert \n Position Type: Quality Control \n Core Competency: Persistence \n", firstTestJob.toString());
+        assertEquals("\n ID: 9\n Name: Product Tester\n Employer: Data not available\n Location: Desert\n Position Type: Quality Control\n Core Competency: Persistence\n", firstTestJob.toString());
     }
 
     @Test
     public void testToStringEmptyFieldLocation() {
         firstTestJob = new Job("Product Tester", new Employer("ACME"), new Location(""), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
-        assertEquals("\n ID: \n Name: Product Tester \n Employer: ACME \n Location: Data not available \n Position Type: Quality Control \n Core Competency: Persistence \n", firstTestJob.toString());
+        assertEquals("\n ID: 12\n Name: Product Tester\n Employer: ACME\n Location: Data not available\n Position Type: Quality Control\n Core Competency: Persistence\n", firstTestJob.toString());
     }
 
     @Test
     public void testToStringEmptyFieldPositionType() {
         firstTestJob = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType(""), new CoreCompetency("Persistence"));
-        assertEquals("\n ID: \n Name: Product Tester \n Employer: ACME \n Location: Desert \n Position Type: Data not available \n Core Competency: Persistence \n", firstTestJob.toString());
+        assertEquals("\n ID: 6\n Name: Product Tester\n Employer: ACME\n Location: Desert\n Position Type: Data not available\n Core Competency: Persistence\n", firstTestJob.toString());
     }
 
     @Test
     public void testToStringEmptyFieldCoreCompetency() {
         firstTestJob = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency(""));
-        assertEquals("\n ID: \n Name: Product Tester \n Employer: ACME \n Location: Desert \n Position Type: Quality Control \n Core Competency: Data not available \n", firstTestJob.toString());
+        assertEquals("\n ID: 1\n Name: Product Tester\n Employer: ACME\n Location: Desert\n Position Type: Quality Control\n Core Competency: Data not available\n", firstTestJob.toString());
     }
 
 //
