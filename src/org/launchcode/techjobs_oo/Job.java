@@ -23,10 +23,10 @@ public class Job {
         nextId++;
     }
 
-//    public Job(String aValue) {
-//        this();
-//        this.value = aValue;
-//    }
+    public Job(String aValue) {
+        this();
+        this.value = aValue;
+    }
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
@@ -109,6 +109,24 @@ public class Job {
 
     public int getId() {
         return id;
+    }
+
+
+    @Override
+    public String toString() {
+        if (name.equals("")) {
+            return "\n ID: " + id + "\n Name: Data not available" +"\n Employer: " + employer + "\n Location: " + location + "\n Position Type: " + positionType + "\n Core Competency: " + coreCompetency + "\n";
+        } else if (employer.getValue().equals("")){
+            return "\n ID: " + id + "\n Name: " + name +"\n Employer: Data not available" + "\n Location: " + location + "\n Position Type: " + positionType + "\n Core Competency: " + coreCompetency + "\n";
+        } else if (location.getValue().equals("")){
+            return "\n ID: " + id + "\n Name: " + name +"\n Employer: " + employer + "\n Location: Data not available" + "\n Position Type: " + positionType + "\n Core Competency: " + coreCompetency + "\n";
+        } else if (positionType.getValue().equals("")){
+            return "\n ID: " + id + "\n Name: " + name +"\n Employer: " + employer + "\n Location: " + location + "\n Position Type: Data not available" + "\n Core Competency: " + coreCompetency + "\n";
+        } else if (coreCompetency.getValue().equals("")) {
+            return "\n ID: " + id + "\n Name: " + name +"\n Employer: " + employer + "\n Location: " + location + "\n Position Type: " + positionType + "\n Core Competency: Data not available" + "\n";
+        } else {
+            return "\n ID: " + id + "\n Name: " + name +"\n Employer: " + employer + "\n Location: " + location + "\n Position Type: " + positionType + "\n Core Competency: " + coreCompetency + "\n";
+        }
     }
 
 }
